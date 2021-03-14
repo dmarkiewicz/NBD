@@ -17,10 +17,8 @@ def strA(days: List[String]): String = {
 def strB(days: List[String]): String = {
     var result = ""
 
-    for (day <- days) {
-        if (day.startsWith("P")) {
-            result += day + ", "
-        }
+    for (day <- days if day.startsWith("P")) {
+        result += day + ", "
     }
 
     return removeTrailingComa(result)
