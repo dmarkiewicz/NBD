@@ -1,0 +1,32 @@
+MongoDB shell version v4.4.5
+connecting to: mongodb://127.0.0.1:27017/nbd?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("20bdc11d-9ec6-431a-83bf-60621b65a633") }
+MongoDB server version: 4.4.5
+{
+	"_id" : ObjectId("60b60e1d2315653e5c2ba00e"),
+	"sex" : "Female",
+	"first_name" : "Lillian",
+	"last_name" : "Alvarez",
+	"job" : "Associate Professor",
+	"email" : "lalvarezk@angelfire.com",
+	"location" : {
+		"city" : "Zhangping",
+		"address" : {
+			"streetname" : "Redwing",
+			"streetnumber" : "0"
+		}
+	},
+	"description" : "pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in",
+	"height" : 156.84,
+	"weight" : 78.25,
+	"birth_date" : ISODate("1960-01-04T11:34:13Z"),
+	"nationality" : "China",
+	"credit" : [
+		{
+			"type" : "mastercard",
+			"number" : "3582900459019692",
+			"currency" : "ZAR",
+			"balance" : 5030.48
+		}
+	]
+}

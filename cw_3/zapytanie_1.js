@@ -1,0 +1,1 @@
+printjson(db.people.findOne({email: "wfields0@diigo.com"}));
