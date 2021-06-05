@@ -1,0 +1,156 @@
+﻿[
+  {
+    "routes": {
+      "start": {
+        "identity": 5,
+        "labels": [
+          "Airport"
+        ],
+        "properties": {
+          "name": "LAX"
+        }
+      },
+      "end": {
+        "identity": 70,
+        "labels": [
+          "Airport"
+        ],
+        "properties": {
+          "name": "DAY"
+        }
+      },
+      "segments": [
+        {
+          "start": {
+            "identity": 5,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "LAX"
+            }
+          },
+          "relationship": {
+            "identity": 1703,
+            "start": 5,
+            "end": 25,
+            "type": "FLIES_TO",
+            "properties": {
+              "businessTicketPrice": 249,
+              "firstClassTicketPrice": 298.8,
+              "economyTicketPrice": 186.75,
+              "airline": "19977"
+            }
+          },
+          "end": {
+            "identity": 25,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "LAS"
+            }
+          }
+        },
+        {
+          "start": {
+            "identity": 25,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "LAS"
+            }
+          },
+          "relationship": {
+            "identity": 1689,
+            "start": 25,
+            "end": 17,
+            "type": "FLIES_TO",
+            "properties": {
+              "businessTicketPrice": 654,
+              "firstClassTicketPrice": 784.8,
+              "economyTicketPrice": 490.5,
+              "airline": "19977"
+            }
+          },
+          "end": {
+            "identity": 17,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "DEN"
+            }
+          }
+        },
+        {
+          "start": {
+            "identity": 17,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "DEN"
+            }
+          },
+          "relationship": {
+            "identity": 1676,
+            "start": 8,
+            "end": 17,
+            "type": "FLIES_TO",
+            "properties": {
+              "businessTicketPrice": 716,
+              "firstClassTicketPrice": 859.1999999999999,
+              "economyTicketPrice": 537.0,
+              "airline": "19977"
+            }
+          },
+          "end": {
+            "identity": 8,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "MSP"
+            }
+          }
+        },
+        {
+          "start": {
+            "identity": 8,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "MSP"
+            }
+          },
+          "relationship": {
+            "identity": 1820,
+            "start": 8,
+            "end": 70,
+            "type": "FLIES_TO",
+            "properties": {
+              "businessTicketPrice": 597,
+              "firstClassTicketPrice": 716.4,
+              "economyTicketPrice": 447.75,
+              "airline": "20304"
+            }
+          },
+          "end": {
+            "identity": 70,
+            "labels": [
+              "Airport"
+            ],
+            "properties": {
+              "name": "DAY"
+            }
+          }
+        }
+      ],
+      "length": 4.0
+    },
+    "totalPrice": 1662.0
+  }
+]

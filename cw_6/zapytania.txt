@@ -1,0 +1,75 @@
+1.
+MATCH path = allShortestPaths((origin {name: "Darjeeling"})-[*]-(destination {name: "Sandakphu"}))
+RETURN path
+
+2.
+MATCH path = allShortestPaths((origin {name: "Darjeeling"})-[*]-(destination {name: "Sandakphu"}))
+WHERE all (r in relationships(path) WHERE r.winter = "true")
+RETURN path
+
+3.
+MATCH path = (origin {name: "Darjeeling"})-[*..5]-(destination {name: "Sandakphu"})
+RETURN path, REDUCE(totalDistance=0, r in RELATIONSHIPS(path) | totalDistance + r.distance) as totalPathDistance
+ORDER BY totalPathDistance ASC;
+
+
+BEFORE FLIGHTS:
+MATCH (originAirport: Airport)<-[:ORIGIN]-(flight:Flight)-[:DESTINATION]->(destinationAirport: Airport)
+CREATE (originAirport)-[:FLIES_TO {airline: flight.airline,
+    economyTicketPrice: [(flight)<-[:ASSIGN]-(ticket {class: "economy"}) | ticket.price][0],
+    businessTicketPrice: [(flight)<-[:ASSIGN]-(ticket {class: "business"}) | ticket.price][0],
+    firstClassTicketPrice: [(flight)<-[:ASSIGN]-(ticket {class: "firstClass"}) | ticket.price][0]}]->(destinationAirport)
+
+4.
+MATCH (airport: Airport)-[:FLIES_TO]->(otherAirport: Airport)
+RETURN airport, count(otherAirport)
+ORDER BY count(otherAirport) DESC
+
+5.
+MATCH routes = (origin:Airport { name:"LAX" })<-[r:FLIES_TO*..5]->(destination:Airport)
+WITH routes, destination, REDUCE(
+    totalPrice = 0.0,
+    flight in relationships(routes) | totalPrice + flight.economyTicketPrice) as totalPrice
+WHERE totalPrice < 3000
+RETURN distinct destination
+
+6.
+MATCH routes = (origin:Airport { name:"LAX" })<-[r:FLIES_TO*..4]->(destination:Airport {name: "DAY"})
+WITH routes, destination, REDUCE(
+    totalPrice = 0.0,
+    flight in relationships(routes) | totalPrice + flight.economyTicketPrice) as totalPrice
+RETURN routes, totalPrice
+ORDER BY totalPrice ASC
+
+
+7.
+MATCH routes = (origin:Airport { name:"LAX" })<-[r:FLIES_TO*..4]->(destination:Airport {name: "DAY"})
+WITH routes, destination, REDUCE(
+    totalPrice = 0.0,
+    flight in relationships(routes) | totalPrice + flight.economyTicketPrice) as totalPrice
+RETURN routes, totalPrice
+ORDER BY totalPrice ASC
+LIMIT 1
+
+8.
+MATCH routes = (origin:Airport { name:"LAX" })<-[r:FLIES_TO*..4]->(destination:Airport {name: "DAY"})
+WITH routes, destination, REDUCE(
+    totalPrice = 0.0,
+    flight in relationships(routes) | totalPrice + flight.businessTicketPrice) as totalPrice
+RETURN routes, totalPrice
+ORDER BY totalPrice ASC
+LIMIT 1
+
+9.
+MATCH (airport: Airport)-[flight:FLIES_TO]->(otherAirport: Airport)
+WITH flight, airport, otherAirport, (collect(airport) + collect(otherAirport)) AS cities
+UNWIND (cities) AS city
+RETURN flight.airline, count(distinct city)
+
+10.
+MATCH routes = (first:Airport)<-[r1:FLIES_TO]->(second:Airport)<-[r2:FLIES_TO]->(third:Airport)
+WITH routes, first, second, third, r1.economyTicketPrice + r2.economyTicketPrice as totalPrice
+WHERE first <> third
+RETURN routes, totalPrice
+ORDER BY totalPrice ASC
+LIMIT 1
