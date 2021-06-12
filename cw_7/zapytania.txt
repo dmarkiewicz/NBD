@@ -3,6 +3,7 @@ curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ivern", "type": "
 curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Karma", "type": "Support", "health": 600, "mana": 60}' http://localhost:8098/buckets/s15302/keys/Karma
 curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ashe", "type": "Marksman", "health": 550, "mana": 100}' http://localhost:8098/buckets/s15302/keys/Ashe
 curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ryze", "type": "Mage", "health": 700, "mana": 50}' http://localhost:8098/buckets/s15302/keys/Ryze
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Kayn", "type": "Jungler", "health": 900, "mana": 70}' http://localhost:8098/buckets/s15302/keys/Kayn
 
 2.
 curl -XGET -i http://localhost:8098/buckets/s15302/keys/Ivern
