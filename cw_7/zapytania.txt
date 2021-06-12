@@ -1,0 +1,32 @@
+1.
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ivern", "type": "Jungler", "health": 1000, "mana": 150}' http://localhost:8098/buckets/s15302/keys/Ivern
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Karma", "type": "Support", "health": 600, "mana": 60}' http://localhost:8098/buckets/s15302/keys/Karma
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ashe", "type": "Marksman", "health": 550, "mana": 100}' http://localhost:8098/buckets/s15302/keys/Ashe
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ryze", "type": "Mage", "health": 700, "mana": 50}' http://localhost:8098/buckets/s15302/keys/Ryze
+
+2.
+curl -XGET -i http://localhost:8098/buckets/s15302/keys/Ivern
+
+3.
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ryze", "type": "Mage", "health": 700, "mana": 50, "difficulty": "hard"}' http://localhost:8098/buckets/s15302/keys/Ryze
+
+4.
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Karma", "type": "Support", "health": 600}' http://localhost:8098/buckets/s15302/keys/Karma
+
+5.
+curl -XPUT -H "Content-Type:application/json" -i -d '{"name": "Ashe", "type": "Marksman", "health": 550, "mana": 120}' http://localhost:8098/buckets/s15302/keys/Ashe
+
+6.
+curl -XDELETE -i http://localhost:8098/buckets/s15302/keys/Ivern
+
+7.
+curl -XGET -i http://localhost:8098/buckets/s15302/keys/Mundo
+
+8.
+curl -XPOST -H "Content-Type:application/json" -i -d '{"dokument": "tekstowy"}' http://localhost:8098/buckets/s15302/keys
+
+9.
+curl -XGET -i http://localhost:8098/buckets/s15302/keys/UE7RuDSX6zJQU35dlbtmex18kCp
+
+10.
+curl -XDELETE -i http://localhost:8098/buckets/s15302/keys/UE7RuDSX6zJQU35dlbtmex18kCp

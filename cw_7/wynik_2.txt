@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvn/89KgKRCiRKY+VQZjL8hZfFgA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s15302>; rel="up"
+Last-Modified: Sat, 12 Jun 2021 10:36:03 GMT
+ETag: "hMSm7DGFnGBBJ58ABlvGH"
+Date: Sat, 12 Jun 2021 10:36:19 GMT
+Content-Type: application/json
+Content-Length: 65
+
+{"name": "Ivern", "type": "Jungler", "health": 1000, "mana": 150}
