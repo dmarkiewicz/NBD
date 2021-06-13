@@ -1,0 +1,9 @@
+Original Ivern:
+{'name': 'Ivern', 'type': 'Jungler', 'health': 1000, 'mana': 150}
+
+Modified Ivern:
+{'name': 'Ivern', 'type': 'Support', 'health': 1000, 'mana': 150}
+
+Getting non existent Ivern:
+404
+not found
